@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Computer History Timeline</title>
+  <link rel="stylesheet" href="Timeline.css">
+</head>
+<body>
+  <div class="background-container"></div>
+  <header class="app-header">
+    <div class="app-title">Computer History Timeline</div>
+  </header>
+
+  <main class="stage">
+    <div class="viewport" id="viewport">
+      <div class="track" id="track">
+        <div class="timeline-container">
+          <div class="timeline-track">
+            <div class="timeline-card" data-title="Timeline1">
+              <img src="images/timeline1.jpg">
+              <h3 class="title">Abacus</h3>
+              <p class="year">3000–2400 BCE</p>
+            </div>
+            <div class="timeline-card" data-title="Timeline2">
+              <img src="images/timeline2.jpg">
+              <h3 class="title">Digital Calculators</h3>
+              <p class="year">1623–1820</p>
+            </div>
+            <div class="timeline-card" data-title="Timeline3">
+              <img src="images/timeline3.jpg">
+              <h3 class="title">Jacquard Loom</h3>
+              <p class="year">1804</p>
+            </div>
+            <div class="timeline-card" data-title="Timeline4">
+              <img src="images/timeline4.jpg">
+              <h3 class="title">The First Computer</h3>
+              <p class="year">1822–1840s</p>
+            </div>
+            <div class="timeline-card" data-title="Timeline5">
+              <img src="images/timeline5.jpg">
+              <h3 class="title">Analytical Engine</h3>
+              <p class="year">1830s</p>
+            </div>
+            <div class="timeline-card" data-title="Timeline6">
+              <img src="images/timeline6.jpg">
+              <h3 class="title">Hollerith’s Tabulating Machine</h3>
+              <p class="year">1890</p>
+            </div>
+            <div class="timeline-card" data-title="Timeline7">
+              <img src="images/timeline7.jpg">
+              <h3 class="title">ENIAC</h3>
+              <p class="year">1945</p>
+            </div>
+            <div class="timeline-card" data-title="Timeline8">
+              <img src="images/timeline8.jpg">
+              <h3 class="title">UNIVAC I</h3>
+              <p class="year">1951</p>
+            </div>
+            <div class="timeline-card" data-title="Timeline9">
+              <img src="images/timeline9.jpg">
+              <h3 class="title">Transistor and Integrated Circuits</h3>
+              <p class="year">1947–1958</p>
+            </div>
+            <div class="timeline-card" data-title="Timeline10">
+              <img src="images/timeline10.jpg">
+              <h3 class="title">Microprocessor</h3>
+              <p class="year">1971</p>
+            </div>
+            <div class="timeline-card" data-title="Timeline11">
+              <img src="images/timeline11.jpg">
+              <h3 class="title">Personal Computers</h3>
+              <p class="year">1970s–1980s</p>
+            </div>
+            <div class="timeline-card" data-title="Timeline12">
+              <img src="images/timeline12.jpg">
+              <h3 class="title">Internet and World Wide Web</h3>
+              <p class="year">1990s</p>
+            </div>
+            <div class="timeline-card" data-title="Timeline13">
+              <img src="images/timeline13.jpg">
+              <h3 class="title">Mobile Computing and Smartphones</h3>
+              <p class="year">2000s</p>
+            </div>
+           <div class="timeline-card" data-title="Timeline14">
+              <img src="images/timeline14.jpg">
+              <h3 class="title">Artificial Intelligence and Modern Computing</h3>
+              <p class="year">2010-PRESENT</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-link" onclick="location.href='about.html'">ABOUT US</div>
+  </footer>
+
+  <script src="Timeline.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Create an array of your 20 image file paths
+      const images = [
+        "images/bg1.jpg", "images/bg2.jpg", "images/bg3.jpg", "images/bg4.jpg",
+        "images/bg5.jpg", "images/bg6.jpg", "images/bg7.jpg", "images/bg8.jpg",
+        "images/bg9.jpg", "images/bg10.jpg", "images/bg11.jpg", "images/bg12.jpg",
+        "images/bg13.jpg", "images/bg14.jpg", "images/bg15.jpg", "images/bg16.jpg",
+        "images/bg17.jpg", "images/bg18.jpg", "images/bg19.jpg", "images/bg20.jpg"
+      ];
+
+      const backgroundContainer = document.querySelector('.background-container');
+      let currentIndex = 0;
+
+      // Function to change the background image
+      function changeBackground() {
+        const randomIndex = Math.floor(Math.random() * images.length);
+        backgroundContainer.style.backgroundImage = `url(${images[randomIndex]})`;
+      }
+
+      // Initial call to set the first background
+      changeBackground();
+
+      // Set an interval to change the background every 2 seconds (2000ms)
+      setInterval(changeBackground, 2000);
+    });
+  </script>
+</body>
+</html>

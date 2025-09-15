@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About Us</title>
+  <link rel="stylesheet" href="Timeline.css">
+  <style>
+    /* New Flexbox styles for the body to ensure the footer is always visible */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+      background: #041226;
+      color: #fff;
+      font-family: 'Inter', Arial, sans-serif;
+    }
+
+    .about-content {
+      flex: 1; /* This is the key: it makes the main content area grow to fill all available space, pushing the footer down */
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+      padding-bottom: 24px; /* A little extra padding at the bottom */
+    }
+
+    /* This CSS makes the picture containers align horizontally */
+    .about-team-container {
+      display: flex; /* Enables flexbox for a horizontal layout */
+      flex-direction: row; /* Arranges items in a row */
+      justify-content: space-evenly; /* Distributes items with equal space around them */
+      align-items: flex-start; /* Aligns items to the top */
+      padding: 20px 0;
+      width: 100%; /* Ensures the container uses the full width available */
+      box-sizing: border-box;
+    }
+
+    .about-team-container .timeline-card {
+      flex: 0 0 200px; /* Reduced the fixed width of the cards */
+      max-width: 250px;
+      height: auto;
+      /* Add some padding to the card itself to create space for the glowing border */
+      padding: 5px; /* Adjust as needed for glow thickness */
+      background: transparent; /* Ensure card background doesn't block glow */
+    }
+
+    /* CSS to resize the images */
+    .about-team-container img {
+      width: 100%; /* Image takes the full width of its container */
+      height: 200px; /* Reduced image height to match the new width */
+      object-fit: cover; /* This is the key: it crops the image to fit the container without distortion */
+      border-radius: 8px; /* Standard border-radius for the image itself */
+      
+      /* Rainbow Border Styles */
+      border: 5px solid transparent; /* Increased the border size */
+      animation: rainbowBorder 8s linear infinite; /* Apply the rainbow animation */
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Optional: add a subtle shadow */
+    }
+    
+    /* NEW: This is the code that makes each image's border glow differently */
+    .about-team-container .timeline-card:nth-child(1) img {
+      animation-delay: -2s;
+    }
+
+    .about-team-container .timeline-card:nth-child(2) img {
+      animation-delay: -4s;
+    }
+
+    .about-team-container .timeline-card:nth-child(3) img {
+      animation-delay: -6s;
+    }
+
+    /* Keyframes for the rainbow border animation */
+    @keyframes rainbowBorder {
+      0% { border-color: #ff0000; } /* Red */
+      15% { border-color: #ff7f00; } /* Orange */
+      30% { border-color: #ffff00; } /* Yellow */
+      45% { border-color: #00ff00; } /* Green */
+      60% { border-color: #0000ff; } /* Blue */
+      75% { border-color: #4b0082; } /* Indigo */
+      90% { border-color: #9400d3; } /* Violet */
+      100% { border-color: #ff0000; } /* Back to Red */
+    }
+
+    .about-content p {
+      text-align: center;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: #e5e7eb;
+    }
+
+    .about-content .title,
+    .about-content .year {
+      text-align: center;
+      margin: 0;
+      margin-top: 10px; /* Space between image and text */
+    }
+    .about-content .year {
+        color: #60a5fa; /* To match other year styles */
+    }
+  </style>
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-title">About Us</div>
+  </header>
+
+  <main class="about-content">
+    <p>We are Computer Engineering students from Pamantasan ng Lungsod ng San Pablo (PLSP) who developed this interactive website as part of our coursework. Our goal is to present the major milestones in computer history in a clear, engaging, and accessible way using our knowledge in software design and web development.</p>
+      
+    <div class="about-team-container">
+      <div class="timeline-card">
+        <img src="images/p1.jpg">
+        <h3 class="title">GIAN MACAM</h3>
+        <p class="year">Programmer</p>
+      </div>
+      <div class="timeline-card">
+        <img src="images/p2.jpg">
+        <h3 class="title">JOSEPH MAQUILING</h3>
+        <p class="year">Programmer</p>
+      </div>
+      <div class="timeline-card">
+        <img src="images/p3.jpg">
+        <h3 class="title">CAREN TITULAR</h3>
+        <p class="year">Programmer</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-link" href="main.html">Home</a>
+  </footer>
+</body>
+</html>
